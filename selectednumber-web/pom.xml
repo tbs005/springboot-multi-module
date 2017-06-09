@@ -16,10 +16,22 @@
     <version>0.0.1-SNAPSHOT</version>
   </parent>
   
-<!--     <modules>
-		<module>../selectednumber-model</module>
-		<module>../selectednumber-service</module>
-	</modules> -->
-
+	
+  	 <dependencies>
+	    <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+       	<dependency>
+			<groupId>com.cvssp.selectednumber.model</groupId>
+			<artifactId>selectednumber-model</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+        </dependency>
+       	<dependency>
+  			<groupId>com.cvssp.selectednumber.service</groupId>
+  			<artifactId>selectednumber-service</artifactId>
+  			<version>0.0.1-SNAPSHOT</version>
+        </dependency>
+     </dependencies>
 
 </project>
