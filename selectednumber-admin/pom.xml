@@ -7,20 +7,50 @@
 	<artifactId>selectednumber-admin</artifactId>
 	<packaging>jar</packaging>
 
-  <parent>
-    <groupId>com.springboot</groupId>
-    <artifactId>selectednumber</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
-  </parent>
-  
+	<parent>
+		<groupId>com.springboot</groupId>
+		<artifactId>selectednumber</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+
 	<name>selectednumber-admin</name>
 	<description></description>
-	 <dependencies>
-	    <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.cvssp.selectednumber.model</groupId>
+			<artifactId>selectednumber-model</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
         </dependency>
-     </dependencies>
-     
+       	<dependency>
+  			<groupId>com.cvssp.selectednumber.service</groupId>
+  			<artifactId>selectednumber-service</artifactId>
+  			<version>0.0.1-SNAPSHOT</version>
+        </dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+					<mainclass>com.cvssp.selectednumber.admin.SelectednumberAdminApplication</mainclass>
+					<layout>ZIP</layout>
+				</configuration>
+				<executions>
+					<execution>
+						<goals>
+							<goal>repackage</goal>
+						</goals>
+						<configuration> <classifier>exec</classifier> </configuration>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
 
 </project>
