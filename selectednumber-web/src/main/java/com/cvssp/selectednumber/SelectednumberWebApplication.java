@@ -1,4 +1,4 @@
-package com.cvssp.selectednumber.web;
+package com.cvssp.selectednumber;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
