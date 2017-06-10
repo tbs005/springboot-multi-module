@@ -1,12 +1,12 @@
-package com.cvssp.selectednumber.admin;
+package com.cvssp.selectednumber;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class SelectednumberAdminApplication {
+public class SelectednumberWebApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(SelectednumberAdminApplication.class, args);
+		SpringApplication.run(SelectednumberWebApplication.class, args);
 	}
 }
