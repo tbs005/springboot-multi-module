@@ -33,7 +33,7 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<configuration>
-					<mainclass>com.cvssp.selectednumber.admin.SelectednumberAdminApplication</mainclass>
+					<mainclass>com.cvssp.selectednumber.SelectednumberAdminApplication</mainclass>
 					<layout>ZIP</layout>
 				</configuration>
 				<executions>
