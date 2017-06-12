@@ -6,6 +6,7 @@ import javax.persistence.Table;
 
 /**
  * Created by wgq on 2017/6/12.
+ * 类型和护照号多对多中间数据实体表
  */
 
 @Entity
