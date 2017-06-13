@@ -15,12 +15,12 @@ public class Batch extends DomainImpl {
     /**
      * 当前批次下生成号码的总数量
      */
-    private Integer count;
+    private Integer count = 0;
 
     /**
      * 当前批次售出数量
      */
-    private Integer saleCount;
+    private Integer saleCount = 0;
 
 
 
@@ -31,7 +31,7 @@ public class Batch extends DomainImpl {
     /**
      * 冻结数量
      */
-    private Integer lockCount;
+    private Integer lockCount = 0;
 
 
     /**
@@ -42,12 +42,12 @@ public class Batch extends DomainImpl {
      * abandon  废弃
      */
     @Column(length = 10)
-    private String status;
+    private String status = "ready";
 
     /**
      * 废弃数量
      */
-    private Integer abandonCount;
+    private Integer abandonCount = 0;
 
 
     /**
