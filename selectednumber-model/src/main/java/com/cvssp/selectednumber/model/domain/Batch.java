@@ -35,14 +35,14 @@ public class Batch extends DomainImpl {
 
 
     /**
-     * ready    已准备好
+     * onReady    已准备好
      * sold     售出
      * lock     冻结
-     * unfreeze 解冻
+     * unFreeze 解冻
      * abandon  废弃
      */
     @Column(length = 10)
-    private String status = "ready";
+    private String status = "onReady";
 
     /**
      * 废弃数量

@@ -9,6 +9,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.Date;
+import java.util.List;
 
 /**
  * Created by wgq on 2017/6/13.
@@ -22,21 +23,20 @@ public class BatchTest {
     private BatchDao batchDao;
 
 
-   /* @Test
+    @Test
     public void selectedBatchSuccess(){
 
-        Batch batch = batchDao.findBatchByDnsegByIdDesc("183");
+        List<Batch> batch = batchDao.findBatchInfo("183");
 
-        System.out.println(batch.getCount());
+        System.out.println(batch.get(0).getCount());
 
-
-    }*/
+    }
 
     @Test
     public void saveBatch(){
 
         Batch batch =  new Batch();
-        batch.setCount(10);
+        batch.setCount(100);
         batch.setDnseg("183");
         batch.setCreatedTime(new Date());
 
