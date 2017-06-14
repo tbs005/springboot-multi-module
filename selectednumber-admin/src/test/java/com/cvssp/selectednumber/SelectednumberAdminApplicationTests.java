@@ -1,4 +1,4 @@
-package com.cvssp.selectednumber.admin;
+package com.cvssp.selectednumber;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
