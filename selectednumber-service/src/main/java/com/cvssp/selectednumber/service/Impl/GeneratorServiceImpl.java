@@ -41,8 +41,6 @@ public class GeneratorServiceImpl implements GeneratorService {
     @Override
     public List<String> batchGeneratorNumber(String dnseg, Integer maxValue) {
 
-        String strNumber = "";
-
         Generator generator = generatorDao.FindGeneratorInfo(dnseg);
 
         Integer index = generator.getCurrentCount();
@@ -51,9 +49,13 @@ public class GeneratorServiceImpl implements GeneratorService {
 
         for( int i = index+1;i<=maxValue;i++){
 
+            StringBuffer sb = new StringBuffer(dnseg);
+
             String baseCode = generatorBaseCode(String.valueOf(i));
-            strNumber = dnseg+baseCode+i;
-            NumberList.add(strNumber);
+
+            sb.append(baseCode).append(i);
+
+            NumberList.add(sb.toString());
 
         }
 

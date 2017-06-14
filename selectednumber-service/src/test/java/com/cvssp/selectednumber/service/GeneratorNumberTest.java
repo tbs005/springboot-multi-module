@@ -12,7 +12,7 @@ import org.springframework.test.context.junit4.SpringRunner;
  */
 
 @RunWith(SpringRunner.class)
-@SpringBootTest(classes = App.class )
+@SpringBootTest
 public class GeneratorNumberTest {
 
 
