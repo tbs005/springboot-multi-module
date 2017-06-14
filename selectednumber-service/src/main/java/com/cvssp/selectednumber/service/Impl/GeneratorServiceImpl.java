@@ -20,7 +20,6 @@ import java.util.List;
 public class GeneratorServiceImpl implements GeneratorService {
 
 
-
     @Autowired
     private GeneratorDao generatorDao;
 
@@ -31,9 +30,9 @@ public class GeneratorServiceImpl implements GeneratorService {
     private BatchDao batchDao;
 
 
-
     /**
      * 批量生成号码
+     *
      * @param dnseg
      * @param maxValue
      * @return
@@ -47,7 +46,7 @@ public class GeneratorServiceImpl implements GeneratorService {
 
         List<String> NumberList = new ArrayList<String>();
 
-        for( int i = index+1;i<=maxValue;i++){
+        for (int i = index + 1; i <= maxValue; i++) {
 
             StringBuffer sb = new StringBuffer(dnseg);
 
@@ -74,7 +73,7 @@ public class GeneratorServiceImpl implements GeneratorService {
     @Override
     public boolean syschronBatchCount(String dnseg) {
 
-       if (null == dnseg || "".equals(dnseg)) return false;
+        if (null == dnseg || "".equals(dnseg)) return false;
 
         try {
             Integer batchCount = batchDao.findBatchInfo(dnseg).get(0).getCount();
@@ -89,52 +88,53 @@ public class GeneratorServiceImpl implements GeneratorService {
         }
 
 
-
     }
 
 
     /**
      * 生成baseCode
+     *
      * @param index
      * @return
      */
-    private   String generatorBaseCode(String  index){
+    private String generatorBaseCode(String index) {
 
         int numberlen = index.length();
-        int baselen = 6-numberlen;
+        int baselen = 6 - numberlen;
 
         char[] ch = new char[baselen];
-        for (int i=0;i<ch.length;i++){
+        for (int i = 0; i < ch.length; i++) {
             ch[i] = '0';
         }
         String str = String.valueOf(ch);
-        return  str;
+        return str;
 
     }
 
     /**
      * 判断是否有号码记录
+     *
      * @param dnseg
      * @return
      */
-    public boolean isExistNumber(String dnseg){
+    public boolean isExistNumber(String dnseg) {
 
         try {
-            List<CvsspNumber> numberList =numberDao.findNumberStateless(dnseg);
+            List<CvsspNumber> numberList = numberDao.findNumberStateless(dnseg);
 
-            if(numberList.size()>0){
+            if (numberList.size() > 0) {
 
-                return  true;
+                return true;
 
-            }else{
+            } else {
 
-                return  false;
+                return false;
 
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
 
-        return  true;
+        return true;
     }
 }
