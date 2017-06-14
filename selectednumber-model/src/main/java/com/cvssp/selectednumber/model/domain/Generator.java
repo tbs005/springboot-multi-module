@@ -25,6 +25,11 @@ public class Generator extends DomainImpl {
      */
     private Integer maxValue;
 
+    /**
+     * 某号段当前号码值
+     */
+    private Integer currentCount = 0;
+
 
     public String getDnseg() {
         return dnseg;
@@ -40,5 +45,13 @@ public class Generator extends DomainImpl {
 
     public void setMaxValue(Integer maxValue) {
         this.maxValue = maxValue;
+    }
+
+    public Integer getCurrentCount() {
+        return currentCount;
+    }
+
+    public void setCurrentCount(Integer currentCount) {
+        this.currentCount = currentCount;
     }
 }

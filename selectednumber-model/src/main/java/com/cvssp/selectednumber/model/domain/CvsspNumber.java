@@ -16,13 +16,13 @@ public class CvsspNumber extends DomainImpl {
      * 护照号
      */
     @Column(length = 20)
-    private String number;
+    private String number = "0";
 
     /**
      * 保留号
      */
     @Column(length = 20)
-    private Integer remain;
+    private Integer remain = 0;
 
     /**
      * ready    已准备好

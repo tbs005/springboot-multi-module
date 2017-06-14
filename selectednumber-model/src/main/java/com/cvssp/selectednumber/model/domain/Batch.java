@@ -35,7 +35,7 @@ public class Batch extends DomainImpl {
 
 
     /**
-     * onReady    已准备好
+     * onReady  已准备好
      * sold     售出
      * lock     冻结
      * unFreeze 解冻

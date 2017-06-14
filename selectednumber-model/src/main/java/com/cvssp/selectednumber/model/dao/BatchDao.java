@@ -12,8 +12,10 @@ import java.util.List;
  */
 public interface BatchDao extends JpaRepository<Batch,Long> {
 
-    @Query("SELECT b FROM Batch b WHERE b.dnseg=?1 and b.status='onReady' order by b.createdTime desc")
+    @Query("FROM Batch b WHERE b.dnseg=?1 and b.status='onReady' order by b.createdTime desc")
     List<Batch> findBatchInfo(String dnseg);
+
+
 
 
 }
