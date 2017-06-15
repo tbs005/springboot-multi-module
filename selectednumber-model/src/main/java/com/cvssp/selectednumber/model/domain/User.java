@@ -3,7 +3,7 @@ package com.cvssp.selectednumber.model.domain;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "T_User")
+@Table(name = "user")
 public class User extends DomainImpl{
 
 	

@@ -7,16 +7,17 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.cvssp.selectednumber.service.GeneratorService;
+import com.cvssp.selectednumber.service.UserService;
 
 @RestController
 public class IndexController {
 
-	@Autowired
-	private GeneratorService generatorService;
+    @Autowired
+    UserService userService;
 	
     @RequestMapping(value = "/index",method = RequestMethod.GET)
     public String index(Model model){
-    	boolean existNumber = generatorService.isExistNumber("111");
-        return ""+existNumber;
+    	long count = userService.count();
+        return ""+count;
     }
 }

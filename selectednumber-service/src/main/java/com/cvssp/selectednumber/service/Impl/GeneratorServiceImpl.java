@@ -1,22 +1,23 @@
 package com.cvssp.selectednumber.service.Impl;
 
 
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
 import com.cvssp.selectednumber.model.dao.BatchDao;
 import com.cvssp.selectednumber.model.dao.GeneratorDao;
 import com.cvssp.selectednumber.model.dao.NumberDao;
 import com.cvssp.selectednumber.model.domain.CvsspNumber;
 import com.cvssp.selectednumber.model.domain.Generator;
 import com.cvssp.selectednumber.service.GeneratorService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by wgq on 2017/6/14.
  */
-@Service
+@Component("generatorService")
 public class GeneratorServiceImpl implements GeneratorService {
 
 

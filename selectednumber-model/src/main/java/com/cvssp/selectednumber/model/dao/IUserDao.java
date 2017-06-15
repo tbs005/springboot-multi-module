@@ -6,8 +6,6 @@ import org.springframework.stereotype.Repository;
 
 import com.cvssp.selectednumber.model.domain.User;
 
-@Component
-@Repository
 public interface IUserDao extends CrudRepository<User, Long>{
 	public User findByName(String name);
 }
