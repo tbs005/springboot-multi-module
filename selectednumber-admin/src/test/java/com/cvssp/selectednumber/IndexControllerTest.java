@@ -1,7 +1,6 @@
 package com.cvssp.selectednumber;
 
 import static org.hamcrest.CoreMatchers.equalTo;
-import static org.junit.Assert.fail;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
