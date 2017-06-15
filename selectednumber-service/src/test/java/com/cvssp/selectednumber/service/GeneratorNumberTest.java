@@ -1,11 +1,13 @@
 package com.cvssp.selectednumber.service;
 
-import com.cvssp.selectednumber.model.dao.GeneratorDao;
-import com.cvssp.selectednumber.model.domain.Generator;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.context.annotation.Import;
 import org.springframework.test.context.junit4.SpringRunner;
+
+import com.cvssp.selectednumber.model.domain.Generator;
 
 /**
  * Created by wgq on 2017/6/14.
@@ -16,51 +18,21 @@ import org.springframework.test.context.junit4.SpringRunner;
 public class GeneratorNumberTest {
 
 
-   /* @Autowired
-    GeneratorService generatorService;*/
-
     @Autowired
-    GeneratorDao generatorDao;
-
-
-    @org.junit.Test
-    public void QueryMaxValue() {
-
-       /* Long maxValue = generatorDao.getMaxValue("183");*/
-        Generator generator = generatorDao.FindGeneratorInfo("183");
-
-        if (generator != null) {
-
-            System.out.println("当前号段的尾号最大序列号-----" + generator.getMaxValue());
-
-        }
-
-
+    GeneratorService generatorService;
+    
+    @SpringBootApplication
+    @Import(ServiceConfiguration.class)
+    static class TestConfiguration {
     }
-
-
 
     @org.junit.Test
     public void synchronizedBatchCountToGenerator() {
 
         String dnseg = "183";
+        boolean exist =   generatorService.isExistNumber(dnseg);
+        boolean sysnsuccess = generatorService.syschronBatchCount(dnseg);
 
-        //boolean exist =   generatorService.isExistNumber(dnseg);
-
-
-        //boolean sysnsuccess = generatorService.syschronBatchCount(dnseg);
-
-       /* if (sysnsuccess) {
-            Generator generator = generatorDao.FindGeneratorInfo(dnseg);
-            List<String> list = generatorService.batchGeneratorNumber("183", generator.getMaxValue());
-
-            for (String str : list) {
-
-                System.out.println("**************" + str);
-            }
-
-
-        }*/
 
 
     }
