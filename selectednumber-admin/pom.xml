@@ -59,10 +59,27 @@
 		</dependency> -->
 	</dependencies>
 
-	<!-- <build> <plugins> <plugin> <groupId>org.springframework.boot</groupId> 
-		<artifactId>spring-boot-maven-plugin</artifactId> <configuration> <mainclass>com.cvssp.selectednumber.SelectednumberAdminApplication</mainclass> 
-		<layout>ZIP</layout> </configuration> <executions> <execution> <goals> <goal>repackage</goal> 
-		</goals> <configuration> <classifier>exec</classifier> </configuration> </execution> 
-		</executions> </plugin> </plugins> </build> -->
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+					<mainclass>com.cvssp.selectednumber.AdminApplication</mainclass>
+					<layout>ZIP</layout>
+				</configuration>
+				<executions>
+					<execution>
+						<goals>
+							<goal>repackage</goal>
+						</goals>
+						<configuration>  
+              <classifier>exec</classifier>  
+            </configuration>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
 
 </project>

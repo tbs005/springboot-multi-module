@@ -1,6 +1,7 @@
 package com.cvssp.selectednumber;
 
 import org.springframework.boot.SpringApplication;
+import org.springframework.boot.SpringBootConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Import;
@@ -14,11 +15,12 @@ import com.cvssp.selectednumber.service.ServiceConfiguration;
         HibernateJpaAutoConfiguration.class,
         DataSourceTransactionManagerAutoConfiguration.class,  
         })  */
-@SpringBootApplication(scanBasePackages={"classpath*:com.cvssp.selectednumber.*"})  
+@SpringBootApplication 
+@ComponentScan(value = "com.cvssp.selectednumber.*")
 //@Import({DBConfig.class,JpaConfig.class,ServiceConfiguration.class})
 //@Import({JpaConfig.class,ServiceConfiguration.class})
-@Import({ServiceConfiguration.class})
-@ComponentScan
+@Import(ServiceConfiguration.class)
+//@ComponentScan(basePackages={"classpath:com.cvssp.selectednumber.*"})
 //@EnableAutoConfiguration
 public class AdminApplication {
 
